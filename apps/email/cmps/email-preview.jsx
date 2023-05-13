@@ -32,13 +32,13 @@ export function EmailPreview({ email, onRemoveEmail, onMarkIsRead, onMarkIsUnrea
                 <div className="hover-btns">
                     {isHover && <div>
                         <button onClick={(ev) => { ev.preventDefault(); onRemoveEmail(email.id) }} className="btn-email btn-trash">
-                            <img src="../../assets/img/trash.png" alt="" className="trash-img" />
+                            <img src="./assets/img/trash.png" alt="" className="trash-img" />
                         </button>
                         {email.isRead && <button className="btn-email btn-unread" onClick={(ev) => { ev.preventDefault(); onMarkIsRead(email) }}>
-                            <img src="../../assets/img/unreadEmail.png" alt="" className=" readEmail-img" />
+                            <img src="./assets/img/unreademail.png" alt="" className=" readEmail-img" />
                         </button>}
                         {!email.isRead && <button className="btn-email btn-read"onClick={(ev) => { ev.preventDefault(); onMarkIsUnread(email) }}>  
-                            <img src="../../assets/img/readEmail.png" alt="" className=" unreadEmail-img" />
+                            <img src="./assets/img/reademail.png" alt="" className=" unreadEmail-img" />
                         </button>}
                     </div>}
                 </div>

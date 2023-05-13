@@ -2,7 +2,7 @@ export function EmailHeader(props) {
     const { emails } = props
 
     return <header className="email-header">
-      <img src="../../../assets/img/email-logo.jpeg" alt="" />
+      <img src="assets/img/email-logo.jpeg" alt="" />
       {/* <Link to="/">
           <h3><img src="" alt="" /></h3>
       </Link> */}

@@ -29,8 +29,5 @@ export function About() {
                         <a href="https://github.com/AdiBenAmi"><i class="fa-brands fa-square-github fa-2xl"
                                 style="color: #a7727d;"></i> </a>
                     </p> */}
-
-
-
     </section>
 }

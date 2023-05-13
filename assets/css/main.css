@@ -12,6 +12,7 @@
 
 /* Views */
 @import './views/home.css';
+@import './views/about.css';
 
 /* NOTE CMPS */
 @import './apps/note/views/note-index.css';
@@ -32,3 +33,4 @@
 /* Cmps */
 @import './cmps/user-msg.css';
 @import './cmps/app-header.css';
+

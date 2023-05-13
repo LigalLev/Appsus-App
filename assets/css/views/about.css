@@ -1,0 +1,26 @@
+.about h1 {
+    font-family: roboto;
+    font-size: 2rem;
+    font-weight: 600;
+
+    text-align: center;
+    margin-block-start: 2em;
+}
+
+.about-card {
+    display: flex;
+    flex-direction: row;
+    margin: 2em 5em;
+    justify-content: center;
+}
+
+.about-pic {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.about-card div {
+    margin-inline-start: 1em;
+    margin-block: auto;
+}

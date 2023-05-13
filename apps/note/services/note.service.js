@@ -24,10 +24,7 @@ function query(filterBy = {}) {
     //         const regExp = new RegExp(filterBy.type, 'i')
     //         notes = notes.filter(note => regExp.test(car.type))
     //     }
-        // if (filterBy.search) {
-        //     notes = notes.filter(note => note.search >= filterBy.search)
-        // }
-
+       
         if (filterBy.txt) {
             const regExp = new RegExp(filterBy.txt, 'i')
             notes = notes.filter(note => regExp.test(note.info.txt))

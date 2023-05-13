@@ -1,5 +1,5 @@
 header {
-    background: lightcyan;
+    /* background: rgb(236, 244, 244); */
     border-bottom: 2px solid white;
 }
 
@@ -7,6 +7,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
+    border-bottom: 0.5px solid rgb(200, 196, 196);
 }
 
 nav a {
@@ -21,4 +22,9 @@ nav a.active {
     color: darkblue;
     font-weight: bold;
     text-decoration: overline;
+}
+
+.logo img {
+    height: 30px;
+    padding-inline: 50px;
 }

@@ -5,7 +5,7 @@ export function AppHeader() {
     return <header className="app-header">
       
         <Link to="/">
-            <h3><img src="" alt="" /></h3>
+            <div className="logo"><img src="../assets/img/logo.png" alt="" /></div>
         </Link>
      
         <nav>

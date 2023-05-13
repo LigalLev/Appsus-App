@@ -52,7 +52,7 @@
 }
 
 .btn-sidebar-inbox {
-    background-color: #d3e3fd;
+   
     background-image: url("../../../../img/inbox.png");
 
 }
@@ -78,7 +78,7 @@
 
 }
 
-.btn-sidebar-stared {
+.btn-sidebar-starred {
     background-image: url("../../../../img/star.png");
 
 }
@@ -92,3 +92,6 @@
     background-color: #eaebef;
     cursor: pointer;
 }
+ .btn-sidebar-blue{
+    background-color: #d3e3fd;
+ }

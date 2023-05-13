@@ -23,8 +23,8 @@ function getDefaultFilter() {
   return { to: getLoggedInUser().email }
 }
 
-function getDefultSort(){
-  
+function getDefultSort() {
+
 }
 
 function getLoggedInUser() {
@@ -49,9 +49,11 @@ function query(filterBy = {}, sortBy = {}) {
       if (filterBy.from) {
         emails = emails.filter(email => email.from.email === filterBy.from)
       }
-      if (sortBy) {
-
+      if (filterBy.removedAt) {
+        console.log("haaa")
+        emails = emails.filter(email => email.removedAt !== null)
       }
+
       return emails
     })
 }

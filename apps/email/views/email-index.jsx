@@ -20,9 +20,16 @@ export function EmailIndex() {
         console.log('filterBy:', filterBy)
         loadEmails()
         setSearchParams(filterBy)
-        showSuccessMsg('Welcome back to your Inbox!')
+        let pageName;
+        if (filterBy.to) {
+            pageName = 'Inbox'
+        } else if (filterBy.from) {
+            pageName = 'Sent'
+        }
+
+        showSuccessMsg(`Welcome back to your ${pageName}!`)
     }, [filterBy])
-    
+
     const loggedInUser = emailService.getLoggedInUser()
     function loadEmails() {
         // emailService.query({notFrom: 'megan@example.com'}).then(setEmails)
@@ -34,11 +41,21 @@ export function EmailIndex() {
     }
 
     function onRemoveEmail(emailId) {
-        emailService.remove(emailId).then(() => {
-            const updatedEmails = emails.filter(email => email.id !== emailId)
-            setEmails(updatedEmails)
-            showSuccessMsg(`Email deleted!`)
-        })
+        const emailToUpdate = emails.find((email) => { return email.id === emailId })
+        if (emailToUpdate.removedAt === null) {
+            const newEmail = { ...emailToUpdate, removedAt: Date.now() }
+            emailService.save(newEmail).then(() => {
+                const updatedEmails = emails.filter(email => email.id !== emailId)
+                setEmails(updatedEmails)
+                showSuccessMsg(`Email moved to trash!`)
+            })
+        } else {
+            emailService.remove(emailId).then(() => {
+                const updatedEmails = emails.filter(email => email.id !== emailId)
+                setEmails(updatedEmails)
+                showSuccessMsg(`Email deleted!`)
+            })
+        }
     }
     function onMarkIsRead(emailToUpdate) {
         const newEmail = { ...emailToUpdate, isRead: false }
@@ -63,7 +80,7 @@ export function EmailIndex() {
     function onSetFilter(filterBy) {
         setFilterBy(prevFilterBy => ({ ...prevFilterBy, ...filterBy }))
     }
- 
+
     function onSearchTermChange(ev) {
         console.log(ev.target.value)
         setSearchTerm(ev.target.value)
@@ -79,7 +96,6 @@ export function EmailIndex() {
     }
 
     function onSetFilterByRead() {
-        console.log('setting filter by read', )
         setFilterBy({ to: loggedInUser.email, isRead: true })
     }
 
@@ -87,10 +103,14 @@ export function EmailIndex() {
         setFilterBy({ to: loggedInUser.email, isRead: false })
     }
 
-    function onSetFilterByReading({target}){
-        if (target.value === 'all') { onSetFilterByInbox()}
-        if (target.value === 'read') { onSetFilterByRead()}
-        if (target.value === 'unread') { onSetFilterByUnread()}
+    function onSetFilterByReading({ target }) {
+        if (target.value === 'all') { onSetFilterByInbox() }
+        if (target.value === 'read') { onSetFilterByRead() }
+        if (target.value === 'unread') { onSetFilterByUnread() }
+    }
+
+    function onSetFilterByTrash() {
+        setFilterBy({ removedAt: true })
     }
 
     function onCloseModal() {
@@ -99,7 +119,12 @@ export function EmailIndex() {
     }
 
     return <div className="email-index-container">
-        <EmailSidebar emails={emails} setIsCompose={setIsCompose} setFilterBySent={onSetFilterBySent} setFilterByInbox={onSetFilterByInbox} />
+        <EmailSidebar
+            emails={emails}
+            setIsCompose={setIsCompose}
+            setFilterBySent={onSetFilterBySent}
+            setFilterByInbox={onSetFilterByInbox}
+            setFilterByTrash={onSetFilterByTrash} />
         <div className='email-list-search'>
             <div className="email-search">
                 <input type="search" name="search" id="search" placeholder='Search' onChange={onSearchTermChange} /></div>
@@ -110,8 +135,9 @@ export function EmailIndex() {
                 onMarkIsRead={onMarkIsRead}
                 onMarkIsUnread={onMarkIsUnread}
                 onSetFilterByReading={onSetFilterByReading}
+                
             />
-            </div>
+        </div>
         {isCompose && <EmailCompose onCloseModal={onCloseModal} />}
 
     </div>

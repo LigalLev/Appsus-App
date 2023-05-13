@@ -6,7 +6,7 @@ export function AppHeader() {
     return <header className="app-header">
       
         <Link to="/">
-            <div className="logo"><img src="../assets/img/logo.png" alt="" /></div>
+            <div className="logo"><img src="./assets/img/logo.png" alt="" /></div>
         </Link>
 
         {/* <Link to="/email">

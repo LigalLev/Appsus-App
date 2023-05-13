@@ -1,0 +1,94 @@
+.side-bar-container {
+
+    background-color: #f6f8fc;
+    /* padding: 50px; */
+}
+
+.sidebar-list {
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    flex: 1;
+    padding: 20px;
+}
+
+.btn-sidebar {
+    background-repeat: no-repeat;
+    background-position: left;
+    /* background-size: 18px; */
+    padding-inline-start: 2em;
+    /* border:solid; */
+    width: 6em;
+    /* width: 20em; */
+    width: 20em;
+    text-align: left;
+    border-radius: 0 20px 20px 0;
+    border: none;
+    padding-block: 10px;
+    /* margin:0; */
+}
+
+.btn-compose {
+    margin: 10px;
+    /* width: 150px;
+    height: 50px; */
+    /* padding-inline: 20px; */
+    font-family: roboto;
+    font-size: 14px;
+    padding-block: 18px;
+    border-radius: 1em;
+    border: none;
+    background-color: #c2e7ff;
+    background-image: url("../../../../img/edit.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-x: 10px;
+    background-size: 20px;
+    padding-inline-start: 3em;
+    padding-inline-end: 2em;
+    /* width: 6em; */
+
+}
+
+.btn-sidebar-inbox {
+    background-color: #d3e3fd;
+    background-image: url("../../../../img/inbox.png");
+
+}
+
+.img-sidebar {
+    height: 10px;
+    width: 10px;
+}
+
+.btn-sidebar-send {
+    background-image: url("../../../../img/send.png");
+    /* width: 20em; */
+
+}
+
+.btn-sidebar-send {
+    background-image: url("../../../../img/send.png");
+
+}
+
+.btn-sidebar-draft {
+    background-image: url("../../../../img/draft.png");
+
+}
+
+.btn-sidebar-stared {
+    background-image: url("../../../../img/star.png");
+
+}
+
+.btn-sidebar-trash {
+    background-image: url("../../../../img/trash.png");
+
+}
+
+.btn-sidebar:hover {
+    background-color: #eaebef;
+    cursor: pointer;
+}

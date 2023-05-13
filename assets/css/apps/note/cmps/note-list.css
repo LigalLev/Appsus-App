@@ -1,0 +1,27 @@
+ /* note list */
+.note-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    padding-inline: 0px;
+}
+
+.note-item{
+    display: block;
+    width: 15em;
+    height: auto;
+
+    background-color: white;
+    list-style: none;
+    border: 1px solid lightgray;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0.3em;
+}
+
+.note-item:hover {
+    box-shadow: 1px 0 0 lightgray, inset 1px 0 0 grey;
+
+}

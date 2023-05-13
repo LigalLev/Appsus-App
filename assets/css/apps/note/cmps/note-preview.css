@@ -1,0 +1,17 @@
+/* .note-preview{
+    background-color: aqua;
+    color: red;
+} */
+
+.note-preview{
+    /* background-color: lightgrey; */
+    word-wrap: break-word;
+    font-family: roboto;
+    color: black;
+    font-size: 0.8rem;
+    line-height: 1.25em;
+    padding: 0.5em;
+    margin-block-end: 1em;
+    text-align: center;
+    color: darkslategray;
+}

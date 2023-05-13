@@ -92,7 +92,7 @@ function _createNotes() {
                 type: 'NoteTxt',
                 isPinned: false,
                 style: {
-                    backgroundColor: '#FFFFFF'
+                    backgroundColor: '#fec8d8'
                 },
                 info: {
                     txt: 'Fullstack Me Baby!'
@@ -104,7 +104,7 @@ function _createNotes() {
                 type: 'NoteTxt',
                 isPinned: false,
                 style: {
-                    backgroundColor: '#FFFFFF'
+                    backgroundColor: '#FFEE93'
                 },
                 info: {
                     txt: 'You know what i know?'
@@ -116,7 +116,7 @@ function _createNotes() {
                 type: 'NoteTxt',
                 isPinned: false,
                 style: {
-                    backgroundColor: '#FFFFFF'
+                    backgroundColor: '#B4FF9F'
                 },
                 info: {
                     txt: 'Lets dance!'
@@ -143,7 +143,7 @@ function getEmptyNote(type = '', isPinned = false) {
         type,
         isPinned,
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#FDF4F5'
         },
         info: {
             txt: ''

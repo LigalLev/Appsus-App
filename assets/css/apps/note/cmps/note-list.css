@@ -21,11 +21,16 @@
     margin: 0.3em;
 }
 
-.note-item:hover {
+/* .btn-note-container {
+    opacity: 0;
+} */
+
+.note-item:hover{
     box-shadow: 1px 0 0 lightgray, inset 1px 0 0 grey;
+    /* opacity: 1; */
 }
 
-.btn{
+.btn-note{
     border:none;
     height: 30px;
     width: 30px;
@@ -34,12 +39,12 @@
     background-color: transparent;
     background-size: 20px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; 
 }
 
-.btn:hover {
+
+.btn-note:hover {
     cursor: pointer;
-    display: inline-block;
 }
 
 .btn-set-color {
@@ -53,3 +58,5 @@
 .btn-edit-note {
     background-image: url("../../../../img/black-edit.svg");
 }
+
+

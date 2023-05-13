@@ -5,8 +5,9 @@ export function NotePreview({ note }){
 
     return (
         <article className="note-preview" >
-            <h2>{txt}</h2>
-
+            <div>
+                <h2>{txt}</h2>
+            </div>
         </article>
     )
 }

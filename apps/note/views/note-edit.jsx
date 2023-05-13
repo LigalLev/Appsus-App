@@ -52,14 +52,15 @@ export function NoteEdit(props) {
                 <textarea onChange={handleChange} 
                 className="note-edit-input" 
                 rows="5" 
-                size="200" 
+                size="100" 
                 value={txt} 
                 type="text" 
                 name="txt" 
                 id="txt" />
+                <button className="btn-note-edit" onClick={onSaveNote}>Save</button>
             </form>
 
-            <button className="btn-note-edit" onClick={onSaveNote}>Close</button>
+            
         </section>
     )
 }

@@ -7,7 +7,6 @@ import {ColorInput} from "./color-input.jsx"
 
 
 export function NoteList({ notes, onRemoveNote }) {
-
     const [noteIdToEdit, setNoteIdToEdit] = useState(null)
     const [noteColorToEdit, setNoteColorToEdit] = useState('')
 
@@ -15,16 +14,16 @@ export function NoteList({ notes, onRemoveNote }) {
         console.log('newColor:', newColor)
         setNoteColorToEdit((prevStyle) => ({ ...prevStyle, ...newColor }))
     }
-
+//onMouseOver={() => { setIsHover(true) }} onMouseOut={() => { setIsHover(false) }}
     return (
-        <section className="note-list">
+        <section className="note-list" >
             {notes.map(note => 
-                <article key={note.id} className="note-item" style={{backgroundColor:`${note.style.backgroundColor}`}}>
+                <article key={note.id} className="note-item" style={{backgroundColor:`${note.style.backgroundColor}`}} >
                     <NotePreview note={note}/>
-                    <section > 
-                        <button className=" btn btn-delete-note"onClick={() => onRemoveNote(note.id)} ></button>
-                        <button className=" btn btn-edit-note" onClick={()=> {setNoteIdToEdit(note.id)}}></button>  
-                        <button className=" btn btn-set-color" onClick={()=> {setNoteColorToEdit(note.id)}}></button>
+                    <section className="btn-note-container" > 
+                        <button className=" btn-note btn-delete-note"onClick={() => onRemoveNote(note.id)} ></button>
+                        <button className=" btn-note btn-edit-note" onClick={()=> {setNoteIdToEdit(note.id)}}></button>  
+                        <button className=" btn-note btn-set-color" onClick={()=> {setNoteColorToEdit(note.id)}}></button>
                         
                     </section>
                 </article>

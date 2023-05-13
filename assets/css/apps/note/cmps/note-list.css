@@ -1,10 +1,10 @@
  /* note list */
-.note-list {
+ .note-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
-
+    position: relative;
     padding-inline: 0px;
 }
 
@@ -23,5 +23,33 @@
 
 .note-item:hover {
     box-shadow: 1px 0 0 lightgray, inset 1px 0 0 grey;
+}
 
+.btn{
+    border:none;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    
+    background-color: transparent;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-set-color {
+    background-image: url("../../../../img/black-choose-background.svg");
+}
+
+.btn-delete-note {
+    background-image: url("../../../../img/black-trash.svg");
+}
+
+.btn-edit-note {
+    background-image: url("../../../../img/black-edit.svg");
 }

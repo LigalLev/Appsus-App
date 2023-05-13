@@ -1,0 +1,31 @@
+.note-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    position: absolute;
+    background-color: rgb(234, 232, 232);
+    padding: 20px;
+    width: 30vw;
+    height: 20vh;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.note-edit h2 {
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.note-edit-form{
+    flex-grow: 1;
+}
+
+.note-edit-input {
+    width: 30vw;
+    border: none;
+    background-color: rgb(234, 232, 232);
+    font-size: 1rem;
+    padding-block: 1em;
+    outline: none;
+}

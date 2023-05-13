@@ -1,25 +1,22 @@
 const { useEffect, useState, useRef } = React
-const { useParams, useNavigate } = ReactRouterDOM
 
 import { noteService } from "../services/note.service.js"
 
-export function NoteEdit() {
+export function NoteEdit(props) {
     const [noteToEdit, setNoteToEdit] = useState(noteService.getEmptyNote())
     const inputRef = useRef()
-    const navigate = useNavigate()
-    const params = useParams()
+    
 
     useEffect(() => {
-        console.log(inputRef);
-        if (params.noteId) loadNote()
+        // console.log(inputRef);
+        if (props.noteId) loadNote()
     }, [])
 
     function loadNote() {
-        noteService.get(params.noteId)
+        noteService.get(props.noteId)
             .then(setNoteToEdit)
             .catch(err => {
                 console.log('Had issued in note edit:', err);
-                navigate('/note')
                 // showErrorMsg('Book not found!')
             })
     }
@@ -34,7 +31,8 @@ export function NoteEdit() {
         ev.preventDefault()
         noteService.save(noteToEdit)
             .then(() => {
-                navigate('/note')
+                console.log('Note edited')
+                props.closeModal()
                 // showSuccessMsg('Note saved')
             })
             .catch(err => {
@@ -46,15 +44,22 @@ export function NoteEdit() {
     const { info: { txt }} = noteToEdit
 
     return (
-        // <section className="note-edit">
-        //     <h2>{noteToEdit.id ? 'Edit' : 'Add'} Note</h2>
+        <section className="note-edit">
+            <h2 className="note-edit-title">Edit your note</h2>
 
-        //     <form onSubmit={onSaveNote} className="note-edit-form">
-        //         <label htmlFor="txt">Text:</label>
-        //         <input onChange={handleChange} value={txt} type="text" name="txt" id="txt" />
-        //     </form>
+            <form className="note-edit-form">
+                <label htmlFor="txt"></label>
+                <textarea onChange={handleChange} 
+                className="note-edit-input" 
+                rows="5" 
+                size="200" 
+                value={txt} 
+                type="text" 
+                name="txt" 
+                id="txt" />
+            </form>
 
-        //     <button>save</button>
-        // </section>
+            <button className="btn-note-edit" onClick={onSaveNote}>Close</button>
+        </section>
     )
 }

@@ -11,24 +11,55 @@ export const noteService = {
     remove,
     save,
     getEmptyNote,
-    // getDefaultFilter,
+    editNoteContent,
+    changeNoteColor,
+    getDefaultFilter
 }
 
 function query(filterBy = {}) {
     // console.log('filterBy service:', filterBy)
     return asyncStorageService.query(NOTE_KEY)
-
-    // .then(notes => {
+    .then(notes => {
     //     if (filterBy.type) {
     //         const regExp = new RegExp(filterBy.type, 'i')
     //         notes = notes.filter(note => regExp.test(car.type))
     //     }
+        // if (filterBy.search) {
+        //     notes = notes.filter(note => note.search >= filterBy.search)
+        // }
 
-    //     if (filterBy.search) {
-    //         notes = notes.filter(note => note.search >= filterBy.search)
-    //     }
-    //     return notes
-    // })
+        if (filterBy.txt) {
+            const regExp = new RegExp(filterBy.txt, 'i')
+            notes = notes.filter(note => regExp.test(note.info.txt))
+           
+          }
+        return notes
+    })
+}
+
+function getDefaultFilter() {
+    return { txt: ''}
+}
+
+function editNoteContent(noteId, value) { // noteType?
+    const notes = storageService.loadFromStorage(NOTE_KEY)
+    const noteIdx = notes.findIndex(note => note.id === noteId)
+    notes[noteIdx].info.txt = value
+    // switch (noteType) {
+    //     case 'note-txt':
+    //         notes[noteIdx].info.txt = value
+    // }
+
+    storageService.saveToStorage(NOTE_KEY, notes)
+    // return Promise.resolve(notes[noteIdx])
+}
+
+function changeNoteColor(color, noteId) {
+    const notes = storageService.loadFromStorage(NOTE_KEY)
+    let noteIdx = notes.findIndex(note => note.id === noteId)
+    notes[noteIdx].style.backgroundColor = color
+    storageService.saveToStorage(NOTE_KEY, notes)
+    return Promise.resolve()
 }
 
 function get(noteId) {
@@ -61,7 +92,7 @@ function _createNotes() {
                 type: 'NoteTxt',
                 isPinned: false,
                 style: {
-                    backgroundColor: '#00d'
+                    backgroundColor: '#FFFFFF'
                 },
                 info: {
                     txt: 'Fullstack Me Baby!'
@@ -73,7 +104,7 @@ function _createNotes() {
                 type: 'NoteTxt',
                 isPinned: false,
                 style: {
-                    backgroundColor: '#00d'
+                    backgroundColor: '#FFFFFF'
                 },
                 info: {
                     txt: 'You know what i know?'
@@ -85,7 +116,7 @@ function _createNotes() {
                 type: 'NoteTxt',
                 isPinned: false,
                 style: {
-                    backgroundColor: '#00d'
+                    backgroundColor: '#FFFFFF'
                 },
                 info: {
                     txt: 'Lets dance!'

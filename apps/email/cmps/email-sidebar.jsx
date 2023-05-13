@@ -30,13 +30,13 @@ export function EmailSidebar(props) {
         {/* <div className="search-email-bar"><label htmlFor="search">Search:</label>
             <input type="text" name="search" id="search" /></div> */}
         <div >
-            <button className="btn btn-compose" onClick={() => { props.setIsCompose(true) }}>Compose</button>
+            <button className="btn-email btn-compose" onClick={() => { props.setIsCompose(true) }}>Compose</button>
             <ul className="sidebar-list clean-list">
                 <li ><button className="btn-sidebar btn-sidebar-inbox"onClick={setFilterByInbox}>Inbox {emailsUnread()}</button></li>
-                <li ><button className="btn btn-sidebar btn-sidebar-send" onClick={setFilterBySent}>Sent</button></li>
-                <li ><button className="btn btn-sidebar btn-sidebar-draft">Drafts</button></li>
-                <li ><button className="btn btn-sidebar btn-sidebar-stared">Stared</button></li>
-                <li><button className="btn btn-sidebar btn-sidebar-trash">Trash</button></li>
+                <li ><button className="btn-email btn-sidebar btn-sidebar-send" onClick={setFilterBySent}>Sent</button></li>
+                <li ><button className="btn-email btn-sidebar btn-sidebar-draft">Drafts</button></li>
+                <li ><button className="btn-email btn-sidebar btn-sidebar-stared">Stared</button></li>
+                <li><button className="btn-email btn-sidebar btn-sidebar-trash">Trash</button></li>
             </ul>
         </div>
     </section>

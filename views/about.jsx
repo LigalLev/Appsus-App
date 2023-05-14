@@ -12,8 +12,8 @@ export function About() {
             </div>
         </section>
         <section className="about-card">
-            <img className="about-pic" src="./assets/img/adi-img.jpg"></img>
-            <div>
+            <img className="about-pic adi-img" src="./assets/img/adi-img.jpg"></img>
+            <div className="adi-text-container">
                 <h2>Adi Ben-Ami</h2>
                 <p class="about--container">Mom of Geffen and Arbel, a Diettitian and a Fullstack developer to be.
                     My moto for life is "Love what you do and do what you love"
@@ -21,13 +21,6 @@ export function About() {
             </div>
         </section>
 
-        {/* <p class="social-links-container">
-                        <a href="https://www.linkedin.com/in/adi-ben-ami-6674b579"><i
-                                class="fa-brands fa-linkedin fa-2xl" style="color: #a7727d;"></i></a>
-                        <a href="https://www.facebook.com/adi.afriat10/"><i class="fa-brands fa-square-facebook fa-2xl"
-                                style="color: #a7727d;"></i></a>
-                        <a href="https://github.com/AdiBenAmi"><i class="fa-brands fa-square-github fa-2xl"
-                                style="color: #a7727d;"></i> </a>
-                    </p> */}
+      
     </section>
 }

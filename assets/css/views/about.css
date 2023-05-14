@@ -20,6 +20,10 @@
     height: 10em;
 }
 
+.adi-text-container{
+    margin-inline-end: 7em;
+}
+
 .about-card div {
     margin-inline-start: 1em;
     margin-block: auto;
